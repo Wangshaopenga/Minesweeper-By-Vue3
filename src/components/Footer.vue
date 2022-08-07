@@ -5,7 +5,8 @@
     </button>
 
     <a
-      icon-btn i-carbon-logo-github
+      icon-btn
+      i-carbon-logo-github
       rel="noreferrer"
       href="https://github.com/antfu/vitesse-lite"
       target="_blank"
