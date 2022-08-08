@@ -1,13 +1,13 @@
 <template>
   <button
     :class="getBlockClass(block)"
-    w-8
-    h-8
-    border="1 gray-500/15"
+    min-w-8
+    min-h-8
+    border="1 gray-500/20"
     flex="~"
+    m="1px"
     items-center
     justify-center
-    m="0.5"
   >
     <template v-if="block.flagged">
       <div i-mdi:flag text-red></div>
@@ -19,9 +19,9 @@
   </button>
 </template>
 <script lang="ts" setup>
-import { BlockState } from '@/types';
-import {isDev} from '@/composables'
-defineProps<{ block: BlockState }>();
+import { BlockState } from '@/types'
+import { isDev } from '@/composables'
+defineProps<{ block: BlockState }>()
 const numberColors = [
   'text-transparent',
   'text-blue-500',
@@ -32,9 +32,9 @@ const numberColors = [
   'text-purple-500',
   'text-pink-500',
   'text-teal-500',
-];
+]
 function getBlockClass(block: BlockState) {
-  if (!block.revealed) return 'bg-gray-500/10 hover:bg-gray-500';
-  return block.mine ? 'text-#fab' : numberColors[block.adjacentMines];
+  if (!block.revealed) return 'bg-gray-500/10 hover:bg-gray-500'
+  return block.mine ? 'text-#fab' : numberColors[block.adjacentMines]
 }
 </script>
