@@ -50,7 +50,6 @@ export class GamePlay {
       ),
       gametime: useInterval(1000, { controls: true }),
     }
-    console.log('gametime', this.state.value.gametime)
   }
   updateNumber() {
     this.board.forEach((row, y) => {
@@ -142,7 +141,7 @@ export class GamePlay {
     })
   }
   onRightClick(block: BlockState) {
-    if (block.revealed) return
+    if (block.revealed && !block.flagged) return
     block.flagged = !block.flagged
   }
   checkGameState() {
