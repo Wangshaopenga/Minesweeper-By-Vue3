@@ -1,5 +1,7 @@
 {
-  "cSpell.words": ["Vitesse"],
+  "cSpell.words": [
+    "Vitesse"
+  ],
   "prettier.enable": true,
   "files.associations": {
     "*.css": "postcss"

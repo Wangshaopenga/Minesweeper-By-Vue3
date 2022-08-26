@@ -19,25 +19,14 @@
       </div>
     </div>
     <div p1 select-none w-full overflow-auto>
-      <div
-        flex="~"
-        items-center
-        justify-center
-        v-for="(row, x) in play.board"
-        :key="x"
-      >
-        <MineBlock
-          v-for="(block, y) in row"
-          :key="y"
-          :block="block"
-          @click.right.prevent="play.onRightClick(block)"
-          @click.left="play.onLeftClick(block)"
-          @dblclick="play.autoExpand(block)"
-        />
+      <div flex="~" items-center justify-center v-for="(row, x) in play.board" :key="x">
+        <MineBlock v-for="(block, y) in row" :key="y" :block="block" @click.right.prevent="play.onRightClick(block)"
+          @click.left="play.onLeftClick(block)" @dblclick="play.autoExpand(block)" />
       </div>
     </div>
   </div>
   <Confetti :passed="play.state.value.gameState === 'won'" />
+  <button btn @click="play.state.value.gameState = 'won'">123</button>
 </template>
 
 <script setup lang="ts">

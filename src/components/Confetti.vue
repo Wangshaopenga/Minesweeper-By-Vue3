@@ -19,7 +19,7 @@ function congrats() {
     ...defaults,
     particleCount: 80,
     spread: 100,
-    origin: { y: 0 },
+    origin: { y: 0.7 },
   })
   setTimeout(() => {
     confetti({

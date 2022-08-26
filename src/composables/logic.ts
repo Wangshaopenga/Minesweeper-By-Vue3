@@ -155,7 +155,7 @@ export class GamePlay {
       } else {
         this.state.value.gameState = 'won'
         this.state.value.gametime.pause()
-        alert('You win!')
+        // alert('You win!')
       }
     }
   }
