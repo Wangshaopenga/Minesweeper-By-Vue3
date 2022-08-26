@@ -6,7 +6,7 @@
       <button m1 btn @click="newGame('easy')">Easy</button>
       <button m1 btn @click="newGame('medium')">Medium</button>
       <button m1 btn @click="newGame('hard')">Hard</button>
-      <button m1 btn @click="toggleDev">{{ !isDev ? 'NORMAL' : 'DEV' }}</button>
+      <!-- <button m1 btn @click="toggleDev">{{ !isDev ? 'NORMAL' : 'DEV' }}</button> -->
     </div>
     <div flex="~ gap-10" justify-center>
       <div font-mono text-2xl flex="~ gap-1" items-center>
@@ -26,12 +26,11 @@
     </div>
   </div>
   <Confetti :passed="play.state.value.gameState === 'won'" />
-  <button btn @click="play.state.value.gameState = 'won'">123</button>
 </template>
 
 <script setup lang="ts">
 import MineBlock from '@/components/MineBlock.vue'
-import { isDev, toggleDev, GamePlay } from '@/composables'
+import { GamePlay } from '@/composables'
 import Confetti from '@/components/Confetti.vue'
 const play = new GamePlay(9, 9, 10)
 const mineRest = $computed(() => {
